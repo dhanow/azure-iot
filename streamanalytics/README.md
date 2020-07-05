@@ -125,12 +125,12 @@ Once the route has been added to IoT Hub, we need to updte the stream analytics 
 
 Add a second input
 
-![Stream analytics input](./images/stream-analytics-input-2.PNG)
+![Stream analytics input](./images/stream-analytics-input-2.png)
 
 Add a second output
 
-![Stream analytics output](./images/vibration-hub-new-output.PNG)
-![PowerBI settings](./images/vibration-hub-new-bi.PNG)
+![Stream analytics output](./images/vibration-hub-new-output.png)
+![PowerBI settings](./images/vibration-hub-new-bi.png)
 
 Update the query
 Add the following at the begining of the existing query
@@ -154,7 +154,7 @@ WITH AnomalyDetectionStep AS
  INTO vibrationBI
  FROM AnomalyDetectionStep
 ```
-![update query](./images/final-query.PNG)
+![update query](./images/final-query.png)
 
 Note: 
 * The first section of this query takes the vibration data and examins the previous 120 seconds worth. The
