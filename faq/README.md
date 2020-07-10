@@ -435,6 +435,24 @@ they expire. By default, this expiration or time to live (TTL) is set to 7200 se
 a device module runtime settings, and change the store and forward configuration under the time to live (seconds) field.
 Optionally, you can edit the $edgeHub module Identity Twin "timeToLiveSecs" property
 
+### How to prevent iot edge from running out of disk space in an offline scenario
+
+Currently there is no way to limit the amount of storage space EdgeHub uses on disk. This is problematic, especially in 
+offline scenarios where the disk can get full leading to other unwanted side effects. This PR address that (at least partially) -
+
+* It allows 2 settings - max size in bytes, or threshold percentage of total disk space. 
+* If that is exceeded, storing to 
+the DB will fail and EdgeHub will throw a "Storage full" exception to connected clients
+
+Behavior - 
+* Feature is being an "experimental features flag", and is off by default.
+* If turned on, the "threshold check" is enabled by default, with a default threshold of 98%. Default can be configured by setting the env var "MaxDiskUsagePercentage".
+* The EdgeHub twin config supports a new optional parameter "maxStorageSpaceBytes". This can be set to the max bytes the EdgeHub db can take.
+
+Rationale behind having the 2 configs in 2 different places -
+* The idea is that you would use only the maxStorageSpaceBytes in the Twin config if you want to limit the bytes used by the DB. This is similar to the TTL knob in the twin config.
+* If not, you can leave the default threshold percentage based checker, which will limit to 98% usage (to avoid the disk from getting full). If for some reason, this default value doesn't work, you can configure it.
+
 ### You have intermittent network connectivity between the cloud and gateways. You have configured devices to use the device's
 local storage when offline, instead of the container's local storage for performance and resilience.
 
