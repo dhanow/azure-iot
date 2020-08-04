@@ -402,6 +402,10 @@ in IoT Hub.
 Note: Opeque gateways, which are also known as the protocol translation gateway, allow devices without the support of 
 MQTT, AMQP or HTTP protocols to send data to Azure IoT Hub. Besides, the device twin is available in Azure IoT Hub only 
 for the gateway itself, and not for the connected IoT sensors.
+
+### Remote IoT sensors do not have stable Internet connectivity
+
+You want to deploy an Azure Iot Edge as a transparent gateway to support sensors in offline mode. 
   
 ### How to configure a route between two modules. The source module name is LocationDataGPS and the destination module ID
 is LocationTracker
