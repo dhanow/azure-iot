@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OwjGZykHU6xXjUY+lMAYevakqSVbT56kkFH487VKbB+mkiLZuwzd68s6FPOdmA78G3iz1kFJFmmwxp/EFbfp1g==",
+  "dgSpecHash": "VMr6s6twEW30idRizO3vlLWvdE3tXg8yFI0hpJVnofYHaycxjKqnlOsVgwDXpjbqlvlj7/idcqRngFCgqXvfbA==",
   "success": true,
   "projectFilePath": "C:\\Users\\srkothal\\source\\repos\\azure-iot\\asset-condition-tracking-system\\simulator\\simulator\\simulator.csproj",
   "expectedPackageFiles": [
